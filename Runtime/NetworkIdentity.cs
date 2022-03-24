@@ -376,7 +376,7 @@ namespace UnityEngine.Networking
                 try
                 {
                     var prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
-                    if (prefabStage && prefabStage.IsPartOfPrefabContents(prefab))
+                    if (prefabStage != null && prefabStage.IsPartOfPrefabContents(prefab))
                     {
                         path = prefabStage?.prefabAssetPath;
                     }
@@ -393,7 +393,7 @@ namespace UnityEngine.Networking
         {
             var prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
             bool isPartOfPrefabContents = false;
-            if (prefabStage)
+            if (prefabStage != null)
             {
                 try
                 {
